@@ -9,7 +9,7 @@
 <body>
     <form id="form1" runat="server">
         <div>
-        	E-mail Address
+        	E-mail Address 
 			<asp:TextBox ID="txtbox_email" runat="server" TextMode="Email"></asp:TextBox>
 			<br />
 			Password

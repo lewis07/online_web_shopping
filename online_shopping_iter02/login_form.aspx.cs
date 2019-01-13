@@ -51,9 +51,12 @@ namespace online_shopping_iter02
                     if (reader.Read() && txtbox_password.Text == 
                         (string)reader["Password"])
                     {
-                        //Create user session
+                        //Create User Session
                         Session["User"] = reader["UserId"].ToString();
+
                         //CREATE CART
+                        Session["Cart"] = new Cart();
+
                         Response.Redirect("catalog_form.aspx");
                     }
                     else
