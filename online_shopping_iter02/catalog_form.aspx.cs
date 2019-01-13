@@ -106,20 +106,68 @@ namespace online_shopping_iter02
                 lbl_page.Visible = false;
             }
 
-            if (display_range >= 1)
-                div_product_01.Visible = true;
-            else
-                div_product_01.Visible = false;
+            //DISPLAY PRODUCTS
+            {
+                if (display_range >= 1)
+                {
+                    reader.Read();
+                    div_product_01.Visible = true;
+                    lnk_product_01.Text = reader["ProductName"].ToString();
+                    lbl_prod_01_price.Text = reader["ProductPrice"].ToString();
+                    id[0] = reader["ProductId"].ToString();
+                    img_prod_01.ImageUrl = id[0];
+                }
+                else
+                    div_product_01.Visible = false;
 
-            if (display_range >= 2)
-                div_product_02.Visible = true;
-            else
-                div_product_02.Visible = false;
+                if (display_range >= 2)
+                {
+                    reader.Read();
+                    div_product_02.Visible = true;
+                    lnk_product_02.Text = reader["ProductName"].ToString();
+                    lbl_prod_02_price.Text = reader["ProductPrice"].ToString();
+                    id[1] = reader["ProductId"].ToString();
+                    img_prod_01.ImageUrl = "\\|DataDirectory|\\" + id[1] + ".jpg";
+                }
+                else
+                    div_product_02.Visible = false;
 
-            if (display_range >= 3)
-                div_product_03.Visible = true;
-            else
-                div_product_03.Visible = false;
+                if (display_range >= 3)
+                {
+                    reader.Read();
+                    div_product_03.Visible = true;
+                    lnk_product_03.Text = reader["ProductName"].ToString();
+                    lbl_prod_03_price.Text = reader["ProductPrice"].ToString();
+                    id[2] = reader["ProductId"].ToString();
+                    img_prod_01.ImageUrl = "\\|DataDirectory|\\images\\" + id[2] + ".jpg";
+                }
+                else
+                    div_product_03.Visible = false;
+
+                if (display_range >= 4)
+                {
+                    reader.Read();
+                    div_product_04.Visible = true;
+                    lnk_product_04.Text = reader["ProductName"].ToString();
+                    lbl_prod_04_price.Text = reader["ProductPrice"].ToString();
+                    id[3] = reader["ProductId"].ToString();
+                    img_prod_01.ImageUrl = "\\|DataDirectory|\\images\\" + id[3] + ".jpg";
+                }
+                else
+                    div_product_04.Visible = false;
+
+                if (display_range >= 5)
+                {
+                    reader.Read();
+                    div_product_05.Visible = true;
+                    lnk_product_05.Text = reader["ProductName"].ToString();
+                    lbl_prod_05_price.Text = reader["ProductPrice"].ToString();
+                    id[4] = reader["ProductId"].ToString();
+                    img_prod_01.ImageUrl = "\\|DataDirectory|\\images\\" + id[4] + ".jpg";
+                }
+                else
+                    div_product_03.Visible = false;
+            }
         }
 
         //LINK CLICKS EVENTS
