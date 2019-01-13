@@ -97,7 +97,9 @@
     <Compile Include="login_form.aspx.designer.cs">
       <DependentUpon>login_form.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Product.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Purchase.cs" />
     <Compile Include="register_form.aspx.cs">
       <DependentUpon>register_form.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>

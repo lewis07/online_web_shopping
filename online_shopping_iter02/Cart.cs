@@ -7,6 +7,7 @@ namespace online_shopping_iter02
 {
     public class Cart
     {
+        private List<Purchase> purchases;
         private int item_total;
 
         public Cart()
@@ -20,6 +21,16 @@ namespace online_shopping_iter02
                 return true;
             else
                 return false;
+        }
+
+        public void add_product(Purchase new_purchase)
+        {
+            purchases.Add(new_purchase);
+        }
+
+        public void remove_product(int index)
+        {
+            purchases.RemoveAt(index);
         }
     }
 }
