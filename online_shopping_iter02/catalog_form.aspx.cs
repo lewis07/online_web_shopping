@@ -12,7 +12,6 @@ namespace online_shopping_iter02
     public partial class catalog_form : System.Web.UI.Page
     {
         string[] id = new string[5];
-        string search_string;
 
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -40,10 +39,11 @@ namespace online_shopping_iter02
 
             //If Search Query String exists
             if (Request.QueryString["search"] != null)
-                search_string = Request.QueryString["search"].ToString();
+                search_query = Request.QueryString["search"].Replace("+", " ");
             else
-                search_string = "";
+                search_query = "";
 
+            //Open database connection
             SqlConnection connection = new SqlConnection("Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\\online_shopping_db.mdf;Integrated Security=True;Connect Timeout=30");
             try
             {
@@ -53,13 +53,14 @@ namespace online_shopping_iter02
             {
                 Response.Redirect("error_page.aspx");
             }
-            search_query = Request.QueryString["search"].Replace("+", " ");
             SqlCommand command = new SqlCommand(
                 "SELECT COUNT(*) FROM Products WHERE ProductName LIKE '%"
                 + search_query + "%'", connection);
             command.ExecuteNonQuery();
             SqlDataReader reader = command.ExecuteReader();
             reader.Read();
+
+            //Count total matched items
             item_total = (int)reader[0];
             connection.Close();
 
