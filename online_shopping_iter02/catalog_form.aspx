@@ -20,7 +20,9 @@
             <br />
 
             <asp:Label ID="lbl_sort" runat="server" Text="Sort By: "/>
-            <asp:DropDownList ID="drplst_sort" runat="server" >
+            <asp:DropDownList ID="drplst_sort" runat="server" 
+                OnSelectedIndexChanged="drplst_sort_SelectedIndexChanged" 
+                AutoPostBack="True" >
                 <asp:ListItem>Product ID</asp:ListItem>
                 <asp:ListItem>Price (Low to High)</asp:ListItem>
                 <asp:ListItem>Price (High to Low)</asp:ListItem>

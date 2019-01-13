@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -36,7 +36,6 @@ namespace online_shopping_iter02
 
             //Hide no match found
             lbl_no_match.Visible = false;
-
             //If Search Query String exists
             if (Request.QueryString["search"] != null)
             { 
@@ -283,6 +282,74 @@ namespace online_shopping_iter02
         protected void lnk_product_05_Click(object sender, EventArgs e)
         {
             Response.Redirect("product_form.aspx?id=" + id[4]);
+        }
+
+        protected void drplst_sort_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            string search = "";
+            string page = "";
+            string order = "";
+            string query_string = "";
+
+
+            //If Search Query String exists
+            if (Request.QueryString["search"] != null)
+                search = "search=" + Request.QueryString["search"];
+
+            if (Request.QueryString["page"] != null)
+                page = "page=" + Request.QueryString["page"];
+
+            //If Selected Index is not 0:
+            if (drplst_sort.SelectedIndex != 0)
+            {
+                //If Selected Index is 1:
+                if (drplst_sort.SelectedIndex == 1)
+                    order = "order=Price_ASC";
+                else
+                    order = "order=Price_DESC";
+            }
+
+            //If search is empty
+            if (search == "")
+            {
+                //If page is empty
+                if (page == "")
+                {
+                    //If order is not empty
+                    if (order != "")
+                        query_string = order;
+                }
+                else
+                {
+                    //If order is empty
+                    if (order == "")
+                        query_string = page;
+                    else
+                        query_string = page + "&" + order;
+                }
+            }
+            else
+            {
+                //If page is empty
+                if (page == "")
+                {
+                    //If order is empty
+                    if (order == "")
+                        query_string = search;
+                    else
+                        query_string = search + "&" + order;
+                }
+                else
+                {
+                    //If order is empty
+                    if (order == "")
+                        query_string = search + "&" + page;
+                    else
+                        query_string = search + "&" + page + "&" + order;
+                }
+            }
+
+            Response.Redirect("catalog_form.aspx?" + query_string);
         }
     }
 }
