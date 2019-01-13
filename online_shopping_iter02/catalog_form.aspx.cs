@@ -93,7 +93,25 @@ namespace online_shopping_iter02
                     display_range = 5;
                 }
 
-
+                connection = new SqlConnection("Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\\online_shopping_db.mdf;Integrated Security=True;Connect Timeout=30");
+                try
+                {
+                    connection.Open();
+                }
+                catch
+                {
+                    Response.Redirect("error_page.aspx");
+                }
+                int first_item = current_page * 1;
+                int fifth_item = current_page * 5;
+                command = new SqlCommand(
+                    "SELECT * " +
+                    "FROM   (   SELECT  ROW_NUMBER() OVER ( ORDER BY ProductId ) AS RowNum, * " +
+                    "           FROM Products ) AS RowConstrainedResult" +
+                    " WHERE RowNum >= " + first_item.ToString() + " AND RowNum <= " + fifth_item.ToString() +
+                    " ORDER BY ProductId", connection);
+                command.ExecuteNonQuery();
+                reader = command.ExecuteReader();
             }
             //Else if there is no match found
             else
@@ -105,7 +123,6 @@ namespace online_shopping_iter02
                 btn_next.Visible = false;
                 lbl_page.Visible = false;
             }
-
             //DISPLAY PRODUCTS
             {
                 if (display_range >= 1)
@@ -163,10 +180,10 @@ namespace online_shopping_iter02
                     lnk_product_05.Text = reader["ProductName"].ToString();
                     lbl_prod_05_price.Text = reader["ProductPrice"].ToString();
                     id[4] = reader["ProductId"].ToString();
-                    img_prod_01.ImageUrl = "\\|DataDirectory|\\images\\" + id[4] + ".jpg";
+                    img_prod_05.ImageUrl = "\\|DataDirectory|\\images\\" + id[4] + ".jpg";
                 }
                 else
-                    div_product_03.Visible = false;
+                    div_product_05.Visible = false;
             }
         }
 
