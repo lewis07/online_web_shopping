@@ -1,0 +1,58 @@
+﻿function login() {
+    $.ajax({
+        type: "POST",
+        url: 'login.aspx',
+        data: "{ 'getUsername': '" + document.getElementById("login_username").value + "', 'getPassword':'" + document.getElementById("login_password").value + "'}",
+        contentType: "application/json; charset=utf-8",
+        dataType: "json",
+        beforeSend: function () {
+            document.getElementById("login_button").disabled = true;
+        },
+
+        success: function (data) {
+            console.log(data);
+            if (data.status != "User Found!") {
+                document.getElementById("login_result").className = "alert alert-danger alert-dismissable fade in text-center";
+                document.getElementById("login_result").innerHTML = "<a href=\"#\" class=\"hide\" data-dismiss=\"alert\" aria-label=\"close\">&times;</a>";
+                document.getElementById("login_result").innerHTML += "<strong>" + data.status + "</strong>";
+                document.getElementById("login_button").disabled = false;
+            } else {
+                document.getElementById("login_result").className = "alert alert-success alert-dismissable fade in text-center";
+                document.getElementById("login_result").innerHTML = "<a href=\"#\" class=\"hide\" data-dismiss=\"alert\" aria-label=\"close\">&times;</a>";
+                document.getElementById("login_result").innerHTML += "<strong>Sucessfull login!</strong> redirect to users in 3 seconds...";
+                setTimeout(function () { window.location.href = "user/index.aspx" }, 3000);
+            }
+        }
+    });
+
+}
+
+function register() {
+    $.ajax({
+        type: "POST",
+        url: 'register.aspx',
+        data: "{ 'getUsername': '" + document.getElementById("register_username").value + "', 'getPassword':'" + document.getElementById("register_password").value + "', 'getEmail':'" + document.getElementById("register_email").value + "'}",
+        contentType: "application/json; charset=utf-8",
+        dataType: "json",
+        beforeSend: function () {
+            document.getElementById("register_button").disabled = true;
+        },
+        success: function (data) {
+            console.log(data);
+            var new_string = data.status;
+            if (!new_string.includes("User Registered!")) {
+                document.getElementById("register_result").className = "alert alert-danger alert-dismissable fade in text-center";
+                document.getElementById("register_result").innerHTML = "<a href=\"#\" class=\"hide\" data-dismiss=\"alert\" aria-label=\"close\">&times;</a>";
+                document.getElementById("register_result").innerHTML += "<strong>" + data.status + "</strong>";
+                document.getElementById("register_button").disabled = false;
+            } else {
+                document.getElementById("register_result").className = "alert alert-success alert-dismissable fade in text-center";
+                document.getElementById("register_result").innerHTML = "<a href=\"#\" class=\"hide\" data-dismiss=\"alert\" aria-label=\"close\">&times;</a>";
+                document.getElementById("register_result").innerHTML += "<strong>" + data.status + "</strong>";
+                setTimeout(function () { window.location.href = "index.aspx?login=true" }, 3000);
+            }
+
+        }
+    });
+
+}

@@ -1,13 +1,7 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="login_form.aspx.cs" Inherits="online_shopping_iter02.login_form" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site1.Master" AutoEventWireup="true" CodeBehind="login_form.aspx.cs" Inherits="online_shopping_iter02.login_form" %>
 
-<!DOCTYPE html>
-
-<html xmlns="http://www.w3.org/1999/xhtml">
-<head runat="server">
-    <title></title>
-</head>
-<body>
-    <form id="form1" runat="server">
+<asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
+        <form id="form1" runat="server">
         <div>
         	E-mail Address 
 			<asp:TextBox ID="txtbox_email" runat="server" TextMode="Email"></asp:TextBox>
@@ -23,5 +17,5 @@
 			<br />
         </div>
     </form>
-</body>
-</html>
+</asp:Content>
+

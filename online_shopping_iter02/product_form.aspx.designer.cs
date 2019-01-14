@@ -10,7 +10,7 @@
 namespace online_shopping_iter02 {
     
     
-    public partial class catalog_form {
+    public partial class product_form {
         
         /// <summary>
         /// form1 control.

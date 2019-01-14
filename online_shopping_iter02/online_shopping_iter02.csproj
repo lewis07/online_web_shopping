@@ -76,13 +76,28 @@
     <Content Include="App_Data\online_shopping_db_log.ldf">
       <DependentUpon>online_shopping_db.mdf</DependentUpon>
     </Content>
+    <Content Include="cart_form.aspx" />
     <Content Include="catalog_form.aspx" />
+    <Content Include="images\gameboy.png" />
     <Content Include="login_form.aspx" />
+    <Content Include="product_form.aspx" />
     <Content Include="register_form.aspx" />
+    <Content Include="static\bootstrap.min.css" />
+    <Content Include="static\bootstrap.min.js" />
+    <Content Include="static\jquery-3.1.1.min.js" />
+    <Content Include="static\sticky-footer-navbar.css" />
     <Content Include="Web.config" />
+    <Content Include="WebForm1.aspx" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Cart.cs" />
+    <Compile Include="cart_form.aspx.cs">
+      <DependentUpon>cart_form.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="cart_form.aspx.designer.cs">
+      <DependentUpon>cart_form.aspx</DependentUpon>
+    </Compile>
     <Compile Include="catalog_form.aspx.cs">
       <DependentUpon>catalog_form.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -98,6 +113,13 @@
       <DependentUpon>login_form.aspx</DependentUpon>
     </Compile>
     <Compile Include="Product.cs" />
+    <Compile Include="product_form.aspx.cs">
+      <DependentUpon>product_form.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="product_form.aspx.designer.cs">
+      <DependentUpon>product_form.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Purchase.cs" />
     <Compile Include="register_form.aspx.cs">
@@ -107,9 +129,27 @@
     <Compile Include="register_form.aspx.designer.cs">
       <DependentUpon>register_form.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Site1.Master.cs">
+      <DependentUpon>Site1.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Site1.Master.designer.cs">
+      <DependentUpon>Site1.Master</DependentUpon>
+    </Compile>
+    <Compile Include="WebForm1.aspx.cs">
+      <DependentUpon>WebForm1.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebForm1.aspx.designer.cs">
+      <DependentUpon>WebForm1.aspx</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="libman.json" />
+    <Content Include="fonts\glyphicons-halflings-regular.woff2" />
     <None Include="packages.config" />
+    <Content Include="Site1.Master" />
+    <Content Include="static\index.js.download" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

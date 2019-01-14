@@ -1,13 +1,6 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="catalog_form.aspx.cs" Inherits="online_shopping_iter02.catalog_form" %>
-
-<!DOCTYPE html>
-
-<html xmlns="http://www.w3.org/1999/xhtml">
-<head runat="server">
-    <title></title>
-</head>
-<body>
-    <form id="form1" runat="server">
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site1.Master" AutoEventWireup="true" CodeBehind="catalog_form.aspx.cs" Inherits="online_shopping_iter02.catalog_form" %>
+<asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
+        <form id="form1" runat="server">
         <div>
             <asp:HyperLink ID="lnk_profile" runat="server" NavigateUrl="profile_form.aspx">User Profile</asp:HyperLink>
             <asp:ImageButton ID="imgbtn_cart" runat="server" ImageUrl="~/cart_icon.png"
@@ -30,60 +23,79 @@
             
             <br />
 
-            <div id="div_product_01" runat="server">
-                <asp:Image style="float: left" ID="img_prod_01" runat="server" ImageUrl="sample_image.png"/>
-                <div>
-                    <asp:LinkButton ID="lnk_product_01" runat="server" OnClick="lnk_product_01_Click">Product 1 Name</asp:LinkButton>
+            <br />
+
+              <div class="col-sm-3" id="div_product_01" runat="server">
+    <div class="panel panel-info">
+      <div class="panel-heading"><a href="./item.aspx?id=1"><h3 align="center">Gameboy</h3></a></div>
+      <div class="panel-body">
+          <asp:LinkButton ID="lnk_product_01" runat="server" OnClick="lnk_product_01_Click">Product 1 Name</asp:LinkButton>
                     <br />
                     <asp:Label ID="lbl_prod_01_price" runat="server" Text="P 11.99" Font-Bold="True"/>  
+                
+          <button type="button" class="btn btn-success">Add to cart</button>
+      </div>
+    </div>
                 </div>
-            </div>
-            <div id="div_product_02" runat="server">
-                <asp:Image style="float: left" ID="img_prod_02" runat="server" ImageUrl="sample_image.png" />
-                <div>
-                    <asp:LinkButton ID="lnk_product_02" runat="server" OnClick="lnk_product_02_Click">Product 2 Name</asp:LinkButton>
+            <div class="col-sm-3" id="div_product_02" runat="server">
+    <div class="panel panel-info">
+      <div class="panel-heading"><a href="./item.aspx?id=1"><h3 align="center">Gameboy</h3></a></div>
+      <div class="panel-body">
+          <asp:LinkButton ID="lnk_product_02" runat="server" OnClick="lnk_product_01_Click">Product 1 Name</asp:LinkButton>
                     <br />
-                    <asp:Label ID="lbl_prod_02_price" runat="server" Text="P 22.99" Font-Bold="True"/>  
+                    <asp:Label ID="lbl_prod_02_price" runat="server" Text="P 11.99" Font-Bold="True"/>  
+                
+          <button type="button" class="btn btn-success">Add to cart</button>
+      </div>
+    </div>
                 </div>
-            </div>
-            <div id="div_product_03" runat="server">
-                <asp:Image style="float: left" ID="img_prod_03" runat="server" ImageUrl="sample_image.png" />
-                <div>
-                    <asp:LinkButton ID="lnk_product_03" runat="server" OnClick="lnk_product_03_Click">Product 3 Name</asp:LinkButton>
+
+            <div class="col-sm-3" id="div_product_03" runat="server">
+    <div class="panel panel-info">
+      <div class="panel-heading"><a href="./item.aspx?id=1"><h3 align="center">Gameboy</h3></a></div>
+      <div class="panel-body">
+          <asp:LinkButton ID="lnk_product_03" runat="server" OnClick="lnk_product_01_Click">Product 1 Name</asp:LinkButton>
                     <br />
-                    <asp:Label ID="lbl_prod_03_price" runat="server" Text="P 33.99" Font-Bold="True"/>  
+                    <asp:Label ID="lbl_prod_03_price" runat="server" Text="P 11.99" Font-Bold="True"/>  
+                
+          <button type="button" class="btn btn-success">Add to cart</button>
+      </div>
+    </div>
                 </div>
-            </div>
-            <div id="div_product_04" runat="server">
-                <asp:Image style="float: left" ID="img_prod_04" runat="server" 
-                    ImageUrl="sample_image.png" />
-                <div>
-                    <asp:LinkButton ID="lnk_product_04" runat="server" OnClick="lnk_product_04_Click">
-                        Product 4 Name
-                    </asp:LinkButton>
+
+            <div class="col-sm-3" id="div_product_04" runat="server">
+    <div class="panel panel-info">
+      <div class="panel-heading"><a href="./item.aspx?id=1"><h3 align="center">Gameboy</h3></a></div>
+      <div class="panel-body">
+          <asp:LinkButton ID="lnk_product_04" runat="server" OnClick="lnk_product_01_Click">Product 1 Name</asp:LinkButton>
                     <br />
-                    <asp:Label ID="lbl_prod_04_price" runat="server" Text="P 44.99"
-                        Font-Bold="True" />
+                    <asp:Label ID="lbl_prod_04_price" runat="server" Text="P 11.99" Font-Bold="True"/>  
+                
+          <button type="button" class="btn btn-success">Add to cart</button>
+      </div>
+    </div>
                 </div>
-            </div>
-            <div id="div_product_05" runat="server">
-                <asp:Image style="float: left" ID="img_prod_05" runat="server"
-                    ImageUrl="sample_image.png" />
-                <div>
-                    <asp:LinkButton ID="lnk_product_05" runat="server" OnClick="lnk_product_05_Click">
-                        Product 5 Name
-                    </asp:LinkButton>
+
+            <div class="col-sm-3" id="div_product_05" runat="server">
+    <div class="panel panel-info">
+      <div class="panel-heading"><a href="./item.aspx?id=1"><h3 align="center">Gameboy</h3></a></div>
+      <div class="panel-body">
+          <asp:LinkButton ID="lnk_product_05" runat="server" OnClick="lnk_product_01_Click">Product 1 Name</asp:LinkButton>
                     <br />
-                    <asp:Label ID="lbl_prod_05_price" runat="server" Text="P 55.99"
-                        Font-Bold="True" />
+                    <asp:Label ID="lbl_prod_05_price" runat="server" Text="P 11.99" Font-Bold="True"/>  
+                
+          <button type="button" class="btn btn-success">Add to cart</button>
+      </div>
+    </div>
                 </div>
-            </div>
+
+            
+            
             
             <asp:Label ID="lbl_no_match" Text="No matches found" runat="server" />
             <asp:Button ID="btn_previous" runat="server" Text="<" />
             <asp:Label ID="lbl_page" runat="server" Text="1" />
             <asp:Button ID="btn_next" runat="server" Text=">" />
         </div>
-    </form>
-</body>
-</html>
+            </form>
+</asp:Content>

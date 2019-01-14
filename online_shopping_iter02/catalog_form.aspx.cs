@@ -161,7 +161,7 @@ namespace online_shopping_iter02
                     lnk_product_01.Text = reader["ProductName"].ToString();
                     lbl_prod_01_price.Text = reader["ProductPrice"].ToString();
                     id[0] = reader["ProductId"].ToString();
-                    img_prod_01.ImageUrl = id[0];
+                    //img_prod_01.ImageUrl = id[0];
                 }
                 else
                     div_product_01.Visible = false;
@@ -173,7 +173,7 @@ namespace online_shopping_iter02
                     lnk_product_02.Text = reader["ProductName"].ToString();
                     lbl_prod_02_price.Text = reader["ProductPrice"].ToString();
                     id[1] = reader["ProductId"].ToString();
-                    img_prod_01.ImageUrl = "\\|DataDirectory|\\" + id[1] + ".jpg";
+                    //img_prod_01.ImageUrl = "\\|DataDirectory|\\" + id[1] + ".jpg";
                 }
                 else
                     div_product_02.Visible = false;
@@ -185,7 +185,7 @@ namespace online_shopping_iter02
                     lnk_product_03.Text = reader["ProductName"].ToString();
                     lbl_prod_03_price.Text = reader["ProductPrice"].ToString();
                     id[2] = reader["ProductId"].ToString();
-                    img_prod_01.ImageUrl = "\\|DataDirectory|\\images\\" + id[2] + ".jpg";
+                    //img_prod_01.ImageUrl = "\\|DataDirectory|\\images\\" + id[2] + ".jpg";
                 }
                 else
                     div_product_03.Visible = false;
@@ -197,7 +197,7 @@ namespace online_shopping_iter02
                     lnk_product_04.Text = reader["ProductName"].ToString();
                     lbl_prod_04_price.Text = reader["ProductPrice"].ToString();
                     id[3] = reader["ProductId"].ToString();
-                    img_prod_01.ImageUrl = "\\|DataDirectory|\\images\\" + id[3] + ".jpg";
+                    //img_prod_01.ImageUrl = "\\|DataDirectory|\\images\\" + id[3] + ".jpg";
                 }
                 else
                     div_product_04.Visible = false;
@@ -209,7 +209,7 @@ namespace online_shopping_iter02
                     lnk_product_05.Text = reader["ProductName"].ToString();
                     lbl_prod_05_price.Text = reader["ProductPrice"].ToString();
                     id[4] = reader["ProductId"].ToString();
-                    img_prod_05.ImageUrl = "\\|DataDirectory|\\images\\" + id[4] + ".jpg";
+                    //img_prod_05.ImageUrl = "\\|DataDirectory|\\images\\" + id[4] + ".jpg";
                 }
                 else
                     div_product_05.Visible = false;
