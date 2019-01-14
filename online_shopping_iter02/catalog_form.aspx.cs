@@ -16,7 +16,7 @@ namespace online_shopping_iter02
         protected void Page_Load(object sender, EventArgs e)
         {
             int item_total, page_total, current_page, display_range;
-            string search_query;
+            string search_query, order_query = "";
 
             //If User is logged-in
             if (Session["User"] != null)
@@ -93,6 +93,32 @@ namespace online_shopping_iter02
                     display_range = 5;
                 }
 
+                if (!IsPostBack)
+                {
+                    if (Request.QueryString["order"] != null)
+                    {
+                        order_query = Request.QueryString["order"].ToString();
+                        if (order_query == "ProductPrice_ASC")
+                            drplst_sort.SelectedIndex = 1;
+                        else
+                            drplst_sort.SelectedIndex = 2;
+                    }
+                    else
+                    {
+                        drplst_sort.SelectedIndex = 0;
+                        order_query = "ProductId_ASC";
+                    }
+                }
+                else
+                {
+                    if (drplst_sort.SelectedIndex == 0)
+                        order_query = "ProductId_ASC";
+                    else if (drplst_sort.SelectedIndex == 1)
+                        order_query = "ProductPrice_ASC";
+                    else
+                        order_query = "ProductPrice_Desc";
+                }
+
                 connection = new SqlConnection("Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\\online_shopping_db.mdf;Integrated Security=True;Connect Timeout=30");
                 try
                 {
@@ -104,12 +130,14 @@ namespace online_shopping_iter02
                 }
                 int first_item = current_page * 1;
                 int fifth_item = current_page * 5;
+                string column = order_query.Split('_')[0];
+                string order = order_query.Split('_')[1];
                 command = new SqlCommand(
                     "SELECT * " +
-                    "FROM   (   SELECT  ROW_NUMBER() OVER ( ORDER BY ProductId ) AS RowNum, * " +
+                    "FROM   (   SELECT  ROW_NUMBER() OVER ( ORDER BY " + column + " " + order + ") AS RowNum, * " +
                     "           FROM Products ) AS RowConstrainedResult" +
                     " WHERE RowNum >= " + first_item.ToString() + " AND RowNum <= " + fifth_item.ToString() +
-                    " ORDER BY ProductId", connection);
+                    " ORDER BY " + column + " " + order, connection);
                 command.ExecuteNonQuery();
                 reader = command.ExecuteReader();
             }
@@ -123,6 +151,7 @@ namespace online_shopping_iter02
                 btn_next.Visible = false;
                 lbl_page.Visible = false;
             }
+            
             //DISPLAY PRODUCTS
             {
                 if (display_range >= 1)
@@ -188,7 +217,6 @@ namespace online_shopping_iter02
         }
 
         //LINK CLICKS EVENTS
-
         protected void btn_search_Click(object sender, EventArgs e)
         {
             string search_query = txtbox_search.Text.Replace(" ", "+");
@@ -240,9 +268,9 @@ namespace online_shopping_iter02
             {
                 //If Selected Index is 1:
                 if (drplst_sort.SelectedIndex == 1)
-                    order = "order=Price_ASC";
+                    order = "order=ProductPrice_ASC";
                 else
-                    order = "order=Price_DESC";
+                    order = "order=ProductPrice_DESC";
             }
 
             //If search is empty
