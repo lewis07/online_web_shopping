@@ -8,11 +8,12 @@ namespace online_shopping_iter02
     public class Cart
     {
         private List<Purchase> purchases;
-        private int item_total;
+        private int item_total = 0;
 
         public Cart()
         {
             item_total = 0;
+            purchases = new List<Purchase>();
         }
 
         public bool is_empty()

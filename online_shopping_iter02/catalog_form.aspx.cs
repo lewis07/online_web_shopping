@@ -25,6 +25,12 @@ namespace online_shopping_iter02
                 btn_logout.Visible = true;
                 lnk_login.Visible = false;
                 imgbtn_cart.Visible = true;
+
+                btn_add_1.Visible = true;
+                btn_add_2.Visible = true;
+                btn_add_3.Visible = true;
+                btn_add_4.Visible = true;
+                btn_add_5.Visible = true;
             }
             else
             {
@@ -32,6 +38,12 @@ namespace online_shopping_iter02
                 btn_logout.Visible = false;
                 lnk_login.Visible = true;
                 imgbtn_cart.Visible = false;
+
+                btn_add_1.Visible = false;
+                btn_add_2.Visible = false;
+                btn_add_3.Visible = false;
+                btn_add_4.Visible = false;
+                btn_add_5.Visible = false;
             }
 
             //Hide no match found
@@ -159,9 +171,8 @@ namespace online_shopping_iter02
                     reader.Read();
                     div_product_01.Visible = true;
                     lnk_product_01.Text = reader["ProductName"].ToString();
-                    lbl_prod_01_price.Text = reader["ProductPrice"].ToString();
+                    lbl_prod_01_price.Text = "P " + Math.Round((decimal)reader["ProductPrice"], 2).ToString();
                     id[0] = reader["ProductId"].ToString();
-                    //img_prod_01.ImageUrl = id[0];
                 }
                 else
                     div_product_01.Visible = false;
@@ -171,7 +182,7 @@ namespace online_shopping_iter02
                     reader.Read();
                     div_product_02.Visible = true;
                     lnk_product_02.Text = reader["ProductName"].ToString();
-                    lbl_prod_02_price.Text = reader["ProductPrice"].ToString();
+                    lbl_prod_02_price.Text = "P " + Math.Round((decimal)reader["ProductPrice"], 2).ToString();
                     id[1] = reader["ProductId"].ToString();
                     //img_prod_01.ImageUrl = "\\|DataDirectory|\\" + id[1] + ".jpg";
                 }
@@ -183,7 +194,7 @@ namespace online_shopping_iter02
                     reader.Read();
                     div_product_03.Visible = true;
                     lnk_product_03.Text = reader["ProductName"].ToString();
-                    lbl_prod_03_price.Text = reader["ProductPrice"].ToString();
+                    lbl_prod_03_price.Text = "P " + Math.Round((decimal)reader["ProductPrice"], 2).ToString();
                     id[2] = reader["ProductId"].ToString();
                     //img_prod_01.ImageUrl = "\\|DataDirectory|\\images\\" + id[2] + ".jpg";
                 }
@@ -195,7 +206,7 @@ namespace online_shopping_iter02
                     reader.Read();
                     div_product_04.Visible = true;
                     lnk_product_04.Text = reader["ProductName"].ToString();
-                    lbl_prod_04_price.Text = reader["ProductPrice"].ToString();
+                    lbl_prod_04_price.Text = "P " + Math.Round((decimal)reader["ProductPrice"], 2).ToString();
                     id[3] = reader["ProductId"].ToString();
                     //img_prod_01.ImageUrl = "\\|DataDirectory|\\images\\" + id[3] + ".jpg";
                 }
@@ -207,7 +218,7 @@ namespace online_shopping_iter02
                     reader.Read();
                     div_product_05.Visible = true;
                     lnk_product_05.Text = reader["ProductName"].ToString();
-                    lbl_prod_05_price.Text = reader["ProductPrice"].ToString();
+                    lbl_prod_05_price.Text = "P " + Math.Round((decimal)reader["ProductPrice"], 2).ToString();
                     id[4] = reader["ProductId"].ToString();
                     //img_prod_05.ImageUrl = "\\|DataDirectory|\\images\\" + id[4] + ".jpg";
                 }
@@ -314,6 +325,41 @@ namespace online_shopping_iter02
             }
 
             Response.Redirect("catalog_form.aspx?" + query_string);
+        }
+
+        protected void btn_add_1_Click(object sender, EventArgs e)
+        {
+            Cart cart = (Cart)Session["Cart"];
+            Purchase purchase = new Purchase(int.Parse(id[0]), 1);
+            cart.add_product(purchase);
+        }
+
+        protected void btn_add_2_Click(object sender, EventArgs e)
+        {
+            Cart cart = (Cart)Session["Cart"];
+            Purchase purchase = new Purchase(int.Parse(id[1]), 1);
+            cart.add_product(purchase);
+        }
+
+        protected void btn_add_3_Click(object sender, EventArgs e)
+        {
+            Cart cart = (Cart)Session["Cart"];
+            Purchase purchase = new Purchase(int.Parse(id[2]), 1);
+            cart.add_product(purchase);
+        }
+
+        protected void btn_add_4_Click(object sender, EventArgs e)
+        {
+            Cart cart = (Cart)Session["Cart"];
+            Purchase purchase = new Purchase(int.Parse(id[3]), 1);
+            cart.add_product(purchase);
+        }
+
+        protected void btn_add_5_Click(object sender, EventArgs e)
+        {
+            Cart cart = (Cart)Session["Cart"];
+            Purchase purchase = new Purchase(int.Parse(id[4]), 1);
+            cart.add_product(purchase);
         }
     }
 }

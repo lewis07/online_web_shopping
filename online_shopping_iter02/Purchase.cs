@@ -7,7 +7,7 @@ namespace online_shopping_iter02
 {
     public class Purchase : Product
     {
-        private int amount { get; set; }
+        private int amount;
         private decimal subtotal { get; set; }
 
         public Purchase (int new_int, int new_amount) : base(new_int)
@@ -17,8 +17,13 @@ namespace online_shopping_iter02
 
         public decimal calculate_subtotal()
         {
-            subtotal = amount * subtotal;
+            subtotal = amount * get_price();
             return subtotal;
+        }
+
+        public int get_amount()
+        {
+            return amount;
         }
     }
 }

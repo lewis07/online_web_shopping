@@ -22,13 +22,13 @@ namespace online_shopping_iter02 {
         protected global::System.Web.UI.HtmlControls.HtmlForm form1;
         
         /// <summary>
-        /// lnkbtn_profile control.
+        /// lnk_profile control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.LinkButton lnkbtn_profile;
+        protected global::System.Web.UI.WebControls.HyperLink lnk_profile;
         
         /// <summary>
         /// imgbtn_cart control.
@@ -49,66 +49,264 @@ namespace online_shopping_iter02 {
         protected global::System.Web.UI.WebControls.Button btn_logout;
         
         /// <summary>
-        /// lnkbtn_login control.
+        /// lnk_login control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.LinkButton lnkbtn_login;
+        protected global::System.Web.UI.WebControls.HyperLink lnk_login;
         
         /// <summary>
-        /// lbl_name control.
+        /// txtbox_search control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lbl_name;
+        protected global::System.Web.UI.WebControls.TextBox txtbox_search;
         
         /// <summary>
-        /// lbl_price control.
+        /// btn_search control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lbl_price;
+        protected global::System.Web.UI.WebControls.Button btn_search;
         
         /// <summary>
-        /// btn_minus control.
+        /// lbl_sort control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btn_minus;
+        protected global::System.Web.UI.WebControls.Label lbl_sort;
         
         /// <summary>
-        /// lbl_amount control.
+        /// drplst_sort control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lbl_amount;
+        protected global::System.Web.UI.WebControls.DropDownList drplst_sort;
         
         /// <summary>
-        /// btn_plus control.
+        /// div_product_01 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btn_plus;
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl div_product_01;
         
         /// <summary>
-        /// btn_add control.
+        /// lnk_product_01 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btn_add;
+        protected global::System.Web.UI.WebControls.LinkButton lnk_product_01;
+        
+        /// <summary>
+        /// lbl_prod_01_price control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lbl_prod_01_price;
+        
+        /// <summary>
+        /// btn_add_1 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btn_add_1;
+        
+        /// <summary>
+        /// div_product_02 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl div_product_02;
+        
+        /// <summary>
+        /// lnk_product_02 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.LinkButton lnk_product_02;
+        
+        /// <summary>
+        /// lbl_prod_02_price control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lbl_prod_02_price;
+        
+        /// <summary>
+        /// btn_add_2 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btn_add_2;
+        
+        /// <summary>
+        /// div_product_03 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl div_product_03;
+        
+        /// <summary>
+        /// lnk_product_03 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.LinkButton lnk_product_03;
+        
+        /// <summary>
+        /// lbl_prod_03_price control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lbl_prod_03_price;
+        
+        /// <summary>
+        /// btn_add_3 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btn_add_3;
+        
+        /// <summary>
+        /// div_product_04 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl div_product_04;
+        
+        /// <summary>
+        /// lnk_product_04 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.LinkButton lnk_product_04;
+        
+        /// <summary>
+        /// lbl_prod_04_price control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lbl_prod_04_price;
+        
+        /// <summary>
+        /// btn_add_4 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btn_add_4;
+        
+        /// <summary>
+        /// div_product_05 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl div_product_05;
+        
+        /// <summary>
+        /// lnk_product_05 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.LinkButton lnk_product_05;
+        
+        /// <summary>
+        /// lbl_prod_05_price control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lbl_prod_05_price;
+        
+        /// <summary>
+        /// btn_add_5 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btn_add_5;
+        
+        /// <summary>
+        /// lbl_no_match control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lbl_no_match;
+        
+        /// <summary>
+        /// btn_previous control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btn_previous;
+        
+        /// <summary>
+        /// lbl_page control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lbl_page;
+        
+        /// <summary>
+        /// btn_next control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btn_next;
     }
 }

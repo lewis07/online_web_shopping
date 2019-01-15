@@ -26,5 +26,4 @@
             <asp:Button ID="btn_add" Text="Add to Cart" runat="server" OnClick="btn_add_Click" />
         </div>
     </form>
-
-</asp:Content>
+</ asp:Content>
